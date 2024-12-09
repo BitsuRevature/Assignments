@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+            /* background-color: #212A3E; */
+            /* color: #DDE6ED; */
+        }
+
+        .in{
+            height: 1.5rem;
+            margin-left: 1rem;
+            border: none;
+            border-bottom: 1px solid black;
+            /* text-align: right; */
+            font-size: 0.8rem;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <fieldset style="display: inline-block; padding: 1rem;">
+        <legend>User Registration</legend>
+        <form action="/endpoint" method="GET" >
+            
+            <div class="row">
+                <label for="firstname">First Name: </label>
+                <input type="text" name="firstname" id="firstname" placeholder="FirstName" class="in">
+
+                <label for="lastname">Last Name: </label>
+                <input type="text" name="lastname" id="lastname" placeholder="LastName" class="in">
+            </div>
+
+            <div style="display: flex; justify-content: space-between;" class="row">
+                <label>Gender: </label>
+                <div>
+                    <label for="gender">Male: </label>
+                    <input type="radio" name="gender" value="male" tabindex="3">
+                </div>
+                <div>
+                    <label for="gender">Female: </label>
+                    <input type="radio" name="gender" value="female" tabindex="4">
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="username">UserName: </label>
+                <input type="text" name="username" id="username" placeholder="UserName" class="in">
+
+                <label for="password">Password: </label>
+                <input type="text" name="password" id="passwrod" placeholder="Password" class="in">
+            </div>
+
+            <div>
+                <label for="dob">Date Of Birth: </label>
+                <input type="date" name="dob" id="dob">
+            </div>
+
+            <div>
+                <label for="courses">Courses: </label>
+                <select name="courses" id="courses" multiple>
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                    <option value="C#">C#</option>
+                </select>
+            </div>
+
+            <div style="display: flex; justify-content: space-around;">
+                <label>Sports: </label>
+                <div>
+                    <input type="checkbox" name="sports" id="football" value="football" checked> 
+                    <label>Football</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="sports" id="soccer" value="soccer" > 
+                    <label>Soccer</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="sports" id="volleyball" value="volleyball" > 
+                    <label>Volleyball</label>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: center;">
+                <input type="submit" name="submit" id="submit" value="Submit">
+            </div>
+        </form>
+
+    </fieldset>
+
+    
+</body>
+</html>
