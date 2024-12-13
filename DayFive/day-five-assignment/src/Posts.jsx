@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Post from './Post'
-const posts= [
+const postss= [
     {
         title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
         body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
@@ -80,6 +80,19 @@ const posts= [
 ]
 
 export default function Posts(){
+  
+    const [posts, setPosts] = useState(postss);
+
+    function deletePost(idx) {
+        posts.splice(idx, 1)
+        setPosts([...posts]);
+    }
+
+    function deleteComment(idx, commentIdx){
+        posts.at(idx).comments.splice(commentIdx, 1);
+        setPosts([...posts]);
+
+    }
 
 
     return(
@@ -91,7 +104,7 @@ export default function Posts(){
             {
                 posts.map((post, idx) => {
                     
-                    return <Post key={idx} post={post} setPosts/>
+                    return <Post key={idx} idx={idx} post={post} deletePost={deletePost} deleteComment={deleteComment}/>
 
                 })
             }

@@ -1,5 +1,5 @@
 
-export default function Comment({key, comment}) {
+export default function Comment({comment, deleteComment, commentIdx, pIdx}) {
 
 
     return(
@@ -10,6 +10,9 @@ export default function Comment({key, comment}) {
         >
             <h4>{comment.email}</h4>
             <p>{comment.body}</p>
+            <button onClick={
+                () => deleteComment(pIdx, commentIdx)
+            }>Delete Comment</button>
             <hr />
         </div>
     )

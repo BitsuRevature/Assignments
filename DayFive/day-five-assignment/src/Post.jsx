@@ -1,7 +1,8 @@
 
 import Comment from "./Comment";
 
-export default function Post({ key, post, setPosts }) {
+export default function Post({ pIdx, post, deletePost, deleteComment}) {
+
 
 
     return (
@@ -21,11 +22,13 @@ export default function Post({ key, post, setPosts }) {
                 post.comments.map((comment, idx) => {
                     // console.log(comment)
                     return (
-                        <Comment key={idx} comment={comment} />
-
+                        <Comment key={idx} idx={pIdx} commentIdx={idx} comment={comment} deleteComment={deleteComment}/>
                     )
                 })
             }
+            <button onClick={
+                () => deletePost(pIdx)
+            }>Delete Post</button>
         </div>
     )
 }
